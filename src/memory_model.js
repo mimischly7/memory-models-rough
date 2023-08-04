@@ -3,8 +3,13 @@ import fs from "fs"
 // The library allowing for the production of sketches that appear to be hand-drawn
 import rough from "roughjs/bundled/rough.esm.js"
 
-
-const {populateStyleObject, presets, default_text_style} = require("./style.js");
+const {
+    populateStyleObject,
+    presets,
+    default_text_style,
+    collections,
+    immutable
+} = require("./style.js");
 const {config} = require("./config.js");
 const { DOMImplementation, XMLSerializer } = require("@xmldom/xmldom")
 
