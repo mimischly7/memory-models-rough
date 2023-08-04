@@ -2,7 +2,7 @@
  * This file demonstrates the use of the custom styling for text and boxes in a memory model diagram, showing the
  * required structure of the style object.
  *
- * This is a rough demo for illustrating the capabilities of "highliting" features.
+ * This is a rough demo for illustrating the capabilities of "highlighting" features.
  *
  * OUTPUT FILES:
  *      - ~/docs/images/demo_6.svg"
