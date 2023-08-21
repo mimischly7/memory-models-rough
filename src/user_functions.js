@@ -25,9 +25,12 @@ function draw(objects, automation, configuration) {
     let objs;
 
     if (typeof objects === 'string') {
+        // Use of fs.readFileSync(<path>, <options>) which synchronously reads and returns a string of the data stored
+        // in the file that corresponds to path. It blocks execution of any other code until the file is read.
         const json_string = fs.readFileSync(objects, "utf-8");
 
-        // Use JSON.parse in order to convert the return JSON string into a valid JavaScript object.
+        // Since fs.readFileSync returns a string, we then use JSON.parse in order to convert the return JSON string
+        // into a valid JavaScript object (we assume that 'path' is the path to a valid JSON file).
         objs = JSON.parse(json_string);
 
     } else {
@@ -83,8 +86,10 @@ function draw(objects, automation, configuration) {
             configuration.height = downmost_edge + 100;
         }
 
+        // Instantiating a new MemoryModel object
         m = new MemoryModel({width: configuration.width, height: configuration.height})
 
+        // Invoking the `drawAll` method render the canvas based on `objs`
         m.drawAll(objs)
     }
 
